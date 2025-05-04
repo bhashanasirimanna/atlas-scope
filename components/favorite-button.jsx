@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation"; 
 import { Heart } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
@@ -13,6 +14,7 @@ export default function FavoriteButton({
   size = "icon",
 }) {
   const { toast } = useToast();
+  const router = useRouter();
   const { user, isAuthenticated } = useAuth();
   const [isFavorited, setIsFavorited] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
@@ -31,7 +33,7 @@ export default function FavoriteButton({
     checkFavorite();
 
     return () => {
-      isMounted = false; // prevent updating state if unmounted
+      isMounted = false;
     };
   }, [isAuthenticated, user, countryCode]);
 
@@ -42,6 +44,7 @@ export default function FavoriteButton({
         description: "Please log in to save favorites",
         variant: "destructive",
       });
+      router.push("/auth/login");
       return;
     }
 

@@ -426,8 +426,8 @@ export default function Hero() {
           </div>
           <div className="flex items-center justify-center">
             <div className="flex flex-row items-center justify-center bg-transparent relative w-full">
-              <div className="max-w-7xl mx-auto relative overflow-hidden h-[300px] w-[300px] md:h-[400px] md:w-[400px] lg:h-[680px] lg:w-[700px] md:px-4">
-                <div className="absolute h-72 w-full md:h-full z-10">
+              <div className="max-w-7xl mx-auto relative overflow-hidden h-[300px] w-[300px] md:h-[400px] md:w-[400px] lg:h-[650px] lg:w-[650px] md:px-4">
+                <div className="absolute h-[280px] w-[280px] md:h-[400px] md:w-[400px] lg:h-[600px] lg:w-[600px] z-10">
                   <World data={sampleArcs} globeConfig={globeConfig} />
                 </div>
               </div>

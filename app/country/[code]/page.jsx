@@ -112,7 +112,8 @@ export default async function CountryPage({ params }) {
               <div className="flex flex-wrap gap-2">
                 {borderCountries.map((border) => (
                   <Link key={border.cca3} href={`/country/${border.cca3}`}>
-                    <Badge variant="secondary" className="cursor-pointer">
+                    <Badge variant="secondary" className="cursor-pointer border-blue-600/40 hover:border-blue-700 bg-blue-600/30 py-1 px-4">
+                      <Image src={border.flags.svg || border.flags.png} alt={border.flags.alt} width={20} height={20} className="mr-1" />
                       {border.name.common}
                     </Badge>
                   </Link>
